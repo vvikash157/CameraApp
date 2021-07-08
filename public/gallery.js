@@ -12,7 +12,7 @@ openRequest.onsuccess=function(e){
 };
 
 openRequest.onerror=function(e) {
-    alert("inside error");
+    // alert("inside error");
 };
 function fetchMedia() {
     let txnObject=db.transaction("Media","readonly");

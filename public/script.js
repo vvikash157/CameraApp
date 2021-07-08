@@ -27,14 +27,14 @@ let mediaRecorder;
 
 
     mediaRecorder.onStart=function() {
-        console.log("on start");
+        // console.log("on start");
     };
 
     mediaRecorder.ondataavailable=function(e) {
-        console.log("on data available");
-        console.log(e.data);
+        // console.log("on data available");
+        // console.log(e.data);
         let videoObject=new Blob([e.data], { type: "video/mp4" });
-        console.log(videoObject);
+        // console.log(videoObject);
         // let videoURL = URL.createObjectURL(videoObject);
         // let aTag = document.createElement("a");
         // aTag.download = `Video${Date.now()}.mp4`;
@@ -44,14 +44,14 @@ let mediaRecorder;
 
     }
     mediaRecorder.onstop=function () {
-        console.log("inside on stop");
+        // console.log("inside on stop");
     }
     recordbutton.addEventListener("click",recordMediaFun);
 
     capturePhoto.addEventListener("click",capturePhotoFun);
 
     zoomIn.addEventListener("click",function(e){
-        console.log(e);
+        // console.log(e);
         if(currentZoom + 0.1 > maxZoom){
             return;
         }
@@ -59,7 +59,7 @@ let mediaRecorder;
         videoElement.style.transform=`scale(${currentZoom})`;
     });
     zoomOut.addEventListener("click",function(e) {
-        console.log(e);
+        // console.log(e);
         if(currentZoom - 0.1 < minZoom){
             return;
         }
@@ -73,7 +73,7 @@ let mediaRecorder;
 
   for(let i=0;i<filters.length;i++){
         filters[i].addEventListener("click" , function(e) {
-            console.log(e);
+            // console.log(e);
            let currentFilterSelected=e.target.style.backgroundColor;
            if(currentFilterSelected==""){
                if(document.querySelector(".filter-div")){
@@ -82,7 +82,7 @@ let mediaRecorder;
                    return;
                }
            } 
-           console.log(currentFilterSelected);
+        //    console.log(currentFilterSelected);
            if(filterSelected == currentFilterSelected){
                return;
            }
@@ -151,8 +151,8 @@ let mediaRecorder;
        let mediaTable=txnObject.objectStore("Media");
        mediaTable.add({mid: Date.now(),type:mediaType,url:mediaURL});
        txnObject.onerror=function (e) {
-           console.log("txn failed");
-           console.log(e);
+        //    console.log("txn failed");
+        //    console.log(e);
        };
    }
 

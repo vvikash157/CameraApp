@@ -11,6 +11,6 @@ openRequest.onsuccess=function(e){
 };
 
 openRequest.onerror=function(e) {
-    alert("inside error");
+    // alert("inside error");
 };
 
